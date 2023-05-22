@@ -49,17 +49,17 @@ describe('demoblaze Demo',function(){
    
 
     describe("Cart Section", function(){
-        it("Add one article to the cart",function(){
-            cart.selectOneArticle()
+        // it("Add one article to the cart",function(){
+        //     cart.selectOneArticle()
+        // })
+
+         it ("Add different articles to the cart",function(){
+            cart.selectMultipleArticles()
         })
-        /* this are the test cases that i couldn't finish on time
-         it ("Add the same article multiple time to the cart",function(){
-            
+        it ("Add same article to cart multiple times",function(){
+            cart.selectOneArticleMultipleTimes()
         })
-        it ("Add differetn articles to the cart",function(){
-            
-        })
-        it ("Add differetn articles to the cart and delte one from the cart",function(){
+ /*       it ("Add differetn articles to the cart and delte one from the cart",function(){
             
         })
         it ("Place order with out any article",function(){
