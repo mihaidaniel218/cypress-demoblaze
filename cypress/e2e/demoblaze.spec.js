@@ -5,7 +5,8 @@ import logIn from '../pages/logIn'
 import singUp from '../pages/singUp'
 import cart from '../pages/cart'
 
-describe('demoblaze Demo',function(){
+  describe('demoblaze Demo',function(){
+
     let userDetails
     beforeEach(function(){
         homePage.open()
@@ -49,23 +50,24 @@ describe('demoblaze Demo',function(){
    
 
     describe("Cart Section", function(){
-        // it("Add one article to the cart",function(){
-        //     cart.selectOneArticle()
-        // })
 
+         it("Add one article to the cart",function(){
+             cart.selectOneArticle()
+         })
          it ("Add different articles to the cart",function(){
             cart.selectMultipleArticles()
         })
         it ("Add same article to cart multiple times",function(){
             cart.selectOneArticleMultipleTimes()
         })
- /*       it ("Add differetn articles to the cart and delte one from the cart",function(){
+         it ("Add different articles to the cart and delete one from the cart",function(){
+             cart.selectMultipleArticlesDeleteOne()
+         })
+        it ("Place order with one or more articles",function(){
+            cart.selectMultipleArticlesBuyCart()
             
         })
-        it ("Place order with out any article",function(){
-            
-        })
-        it ("Place order with with out name and creditcard ",function(){
+ /*       it ("Place order with with out name and creditcard ",function(){
             
         })
 

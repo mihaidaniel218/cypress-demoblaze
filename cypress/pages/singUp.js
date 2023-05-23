@@ -45,7 +45,7 @@ class SingUp {
     singUp(){
         this.userInput.type(faker.name.firstName())
         this.userPassword.type(faker.internet.password())
-        this.singUpBtn.click()
+        this.singUpBtn.should('exist').and('be.visible').click()
         cy.on('window:alert', (str) => {
             expect(str).to.equal('Sign up successful.');
         });
@@ -63,9 +63,9 @@ class SingUp {
     
 
     closeLogInModal(){
-        this.closewithXBtn.click()
+        this.closewithXBtn.should('exist').and('be.visible').click()
         this.singUpModalVerifyModal()
-        this.closeBtn.click()
+        this.closeBtn.should('exist').and('be.visible').click()
         this.logInTModalitle.should('not.be.visible')
     }
     

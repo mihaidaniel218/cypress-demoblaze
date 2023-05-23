@@ -47,7 +47,7 @@ class LogIn {
     login(User,Password){
         this.userInput.type(User)
         this.userPassword.type(Password)
-        this.logInBtn.click()
+        this.logInBtn.should('exist').and('be.visible').click()
     }
 
     successfulllogIn(User){
@@ -68,7 +68,7 @@ class LogIn {
     nonUserLogIn(){
         this.userInput.type(faker.name.firstName())
         this.userPassword.type(faker.internet.password())
-        this.logInBtn.click()
+        this.logInBtn.should('exist').and('be.visible').click()
         cy.on('window:alert', (str) => {
             expect(str).to.equal(' User does not exist.');
         });
@@ -79,7 +79,7 @@ class LogIn {
     closeLogInModal(){
         this.closewithXBtn.click()
         this.logInModalVerifyModal()
-        this.closeBtn.click()
+        this.closeBtn.should('exist').and('be.visible').click()
         this.logInTModalitle.should('not.be.visible')
     }
     

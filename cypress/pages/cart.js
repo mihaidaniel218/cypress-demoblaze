@@ -37,6 +37,31 @@ class Cart {
     get articleThreeNameInConteiner(){
         return cy.get("#tbodyid > tr:nth-of-type(3) > td:nth-of-type(2)")
     }
+    get deleteOneArticleFromCart() {
+        return cy.get("tr:nth-of-type(1) > td:nth-of-type(4) > a")
+    }
+    get placeOrderFromCart() {
+        return cy.get(".btn.btn-success")
+    } 
+    get nameOfBuyer() {
+        return cy.get("input#name")
+    } 
+    get creditCardOfBuyer() {
+        return cy.get("input#card")
+    } 
+    get purchaseOrderButton() {
+        return cy.get("div#orderModal > div[role='document'] .btn.btn-primary")
+    }
+    get orderSuccessButton() {
+        return cy.get(".btn.btn-lg.btn-primary.confirm")
+    }
+    get successMessageText() {
+        return cy.get(".showSweetAlert.sweet-alert.visible > h2")
+    }
+    
+    get cartMenuEntry() {
+    return cy.get("a#cartur")
+    }
     
     [onclick="addToCart(1)"]
     
@@ -122,7 +147,6 @@ class Cart {
             //expect(texto3).to.contain("Nexus 6")
         })
 
-
       }
 
       selectOneArticleMultipleTimes(){
@@ -163,6 +187,46 @@ class Cart {
             this.articleOneNameInConteiner.should('exist').and('be.visible').invoke('text').then((texto)=>{
                 expect(texto).to.contain("Samsung galaxy s6")
             })
+
+      }
+
+      selectMultipleArticlesDeleteOne(){
+         homePage.open()
+         homePage.verifyPageLoad()
+        this.selectMultipleArticles()
+  
+        // delete Nokia Lumia 1520
+    this.deleteOneArticleFromCart.click()
+    let count = 0
+    this.deleteOneArticleFromCart.each(($el) => {
+        let vest = $el.text()
+        count = count + 1
+        if(vest.includes('Nexus 6')){
+            cy.log('Third product from cart will be deleted!')
+        }
+    })
+    if(count <= 2) {
+        cy.log('Third product from cart was deleted!')
+    }
+
+      }
+
+      selectMultipleArticlesBuyCart(){ 
+
+         homePage.open()
+         homePage.verifyPageLoad()
+         this.selectMultipleArticles()
+        this.placeOrderFromCart.scrollIntoView().should('exist').and('be.visible').click()
+        this.nameOfBuyer.scrollIntoView().should('exist').and('be.visible').type('SuperUser One');
+        this.creditCardOfBuyer.scrollIntoView().should('exist').and('be.visible').type('1111 2222 3333 4444');
+        cy.wait(1000)
+        this.purchaseOrderButton.scrollIntoView().should('exist').and('be.visible').click()
+        cy.wait(1000)
+        this.orderSuccessButton.should('exist').and('be.visible').click()
+        
+  
+        
+
 
       }
     

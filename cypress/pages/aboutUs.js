@@ -30,7 +30,7 @@ class About {
     closeVideoModal(){
         this.closewithXBtn.click()
         this.openAboutUsModalVerifyModal()
-        this.closeBtn.click()
+        this.closeBtn.should('exist').and('be.visible').click()
         this.aboutUsTModalitle.should('not.be.visible')
     }
     playVideo(){
@@ -52,7 +52,7 @@ class About {
       this.video.then(($video) => {
         $video.get(0).pause();
       })
-      this.closeBtn.click()
+      this.closeBtn.should('exist').and('be.visible').click()
       this.aboutUsTModalitle.should('not.be.visible')
     }
 }

@@ -62,9 +62,9 @@ class Contact {
 
     closeMessageModal(){
         this.openContactModalVerifyModal()
-        this.closeBtn.click()
+        this.closeBtn.should('exist').and('be.visible').click()
         this.openContactModalVerifyModal()
-        this.closeWithXBtn.click()
+        this.closeWithXBtn.should('exist').and('be.visible').click()
     }
 }
 
