@@ -67,18 +67,7 @@ import cart from '../pages/cart'
             cart.selectMultipleArticlesBuyCart()
             
         })
- /*       it ("Place order with with out name and creditcard ",function(){
-            
-        })
 
-        it ("Place order with with only name and creditcard ",function(){
-            
-        })
-
-        it ("Close successfully the place order modal ",function(){
-            
-        })
-        */
     })
 
 
