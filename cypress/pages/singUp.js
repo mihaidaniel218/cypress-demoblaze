@@ -43,8 +43,8 @@ class SingUp {
     }
 
     singUp(){
-        this.userInput.type(faker.name.firstName())
-        this.userPassword.type(faker.internet.password())
+        this.userInput.should('exist').and('be.visible').type(faker.name.firstName())
+        this.userPassword.should('exist').and('be.visible').type(faker.internet.password())
         this.singUpBtn.should('exist').and('be.visible').click()
         cy.on('window:alert', (str) => {
             expect(str).to.equal('Sign up successful.');

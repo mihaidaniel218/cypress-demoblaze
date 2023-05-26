@@ -5,7 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    specPattern: 'cypress/e2e/**/*spec.{js,ts}',
+    specPattern: 'cypress/e2e/**/*cy.{js,ts}',
     pageLoadTimeout: 30000,
     
     chromeWebSecurity: false,

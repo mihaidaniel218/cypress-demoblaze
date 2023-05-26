@@ -45,8 +45,8 @@ class LogIn {
     }
 
     login(User,Password){
-        this.userInput.type(User)
-        this.userPassword.type(Password)
+        this.userInput.should('exist').and('be.visible').type(User)
+        this.userPassword.should('exist').and('be.visible').type(Password)
         this.logInBtn.should('exist').and('be.visible').click()
     }
 
