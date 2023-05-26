@@ -84,7 +84,7 @@ class HomePage {
     open(){
         cy.visit("https://www.demoblaze.com")
         cy.title().should('eq','STORE')
-        cy.wait(1500)
+        cy.wait(1000)
     }
 
     verifyPageLoad(){

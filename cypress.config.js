@@ -9,6 +9,7 @@ module.exports = defineConfig({
     pageLoadTimeout: 30000,
     
     chromeWebSecurity: false,
+    experimentalMemoryManagement: true,
     viewportHeight:600,
     viewportWidth:1000
   },

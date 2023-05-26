@@ -5,7 +5,7 @@ class About {
         return cy.get("#videoModalLabel")
     }
     get closewithXBtn(){
-        return cy.get("body.modal-open:nth-child(2) div.modal.fade.show:nth-child(4) div.modal-header button.close > span:nth-child(1)")
+        return cy.get("body.modal-open:nth-child(2) div.modal.fade.show:nth-child(4) div.modal-header button.close > span:nth-child(1)").should('exist').and('be.visible')
     }
     get video(){
         return cy.get("#example-video_html5_api")
@@ -28,7 +28,8 @@ class About {
         this.closewithXBtn.should('exist').and('be.visible')
     }
     closeVideoModal(){
-        this.closewithXBtn.click()
+        cy.wait(300)
+        this.closewithXBtn.should('exist').and('be.visible').click()
         this.openAboutUsModalVerifyModal()
         this.closeBtn.should('exist').and('be.visible').click()
         this.aboutUsTModalitle.should('not.be.visible')

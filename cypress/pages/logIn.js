@@ -6,7 +6,7 @@ class LogIn {
         return cy.get("#logInModalLabel")
     }
     get closewithXBtn(){
-        return cy.get(".modal-open:nth-child(2) div.modal.fade.show button.close > span:nth-child(1)")
+        return cy.get(".modal-open:nth-child(2) div.modal.fade.show button.close > span:nth-child(1)").should('exist').and('be.visible')
     }
     get userNameTitle(){
         return cy.get("div.modal.fade.show:nth-child(3) div.modal-body div.form-group:nth-child(1) label.form-control-label")

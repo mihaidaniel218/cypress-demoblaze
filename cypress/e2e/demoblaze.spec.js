@@ -47,30 +47,6 @@ import cart from '../pages/cart'
         })
     })
 
-   
-
-    describe("Cart Section", function(){
-
-         it("Add one article to the cart",function(){
-             cart.selectOneArticle()
-         })
-         it ("Add different articles to the cart",function(){
-            cart.selectMultipleArticles()
-        })
-        it ("Add same article to cart multiple times",function(){
-            cart.selectOneArticleMultipleTimes()
-        })
-         it ("Add different articles to the cart and delete one from the cart",function(){
-             cart.selectMultipleArticlesDeleteOne()
-         })
-        it ("Place order with one or more articles",function(){
-            cart.selectMultipleArticlesBuyCart()
-            
-        })
-
-    })
-
-
     describe("Log in Section", function(){
         it("Log in successfully with and already created user",function(){
             logIn.logInModalVerifyModal()
@@ -111,5 +87,26 @@ import cart from '../pages/cart'
         
     })
 
+   
+    describe("Cart Section", function(){
+
+         it("Add one article to the cart",function(){
+             cart.selectOneArticle()
+         })
+         it ("Add different articles to the cart",function(){
+            cart.selectMultipleArticles()
+        })
+        it ("Add same article to cart multiple times",function(){
+            cart.selectOneArticleMultipleTimes()
+        })
+         it ("Add different articles to the cart and delete one from the cart",function(){
+             cart.selectMultipleArticlesDeleteOne()
+         })
+        it ("Place order with one or more articles",function(){
+            cart.selectMultipleArticlesBuyCart()
+            
+        })
+
+    })
 
 })
